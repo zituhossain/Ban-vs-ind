@@ -54,7 +54,7 @@ function resetValues() {
 formElm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     // reset previous state
-    resetValues();
+    resetValues(); //reset
     // getting the input
     const inputScore = inputScoreElm.value;
     // validation check
