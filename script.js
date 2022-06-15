@@ -42,7 +42,7 @@ function resetValues() {
     p2Score = 0;
     winningScore = 5;
     gameOver = false;
-    turnPlayer = 'p1';
+    turnPlayer = players[Math.floor(Math.random() * players.length)];
     p1BtnElm.removeAttribute('disabled');
     p2BtnElm.removeAttribute('disabled');
     p1scoreElm.textContent = p1Score;
