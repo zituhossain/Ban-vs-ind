@@ -68,4 +68,5 @@ p2BtnElm.addEventListener('click', (evt) => {
         alert('Player-2 is winner');
     }
 
+    
 });
