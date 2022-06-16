@@ -10,6 +10,8 @@ input#inputScore {
 .container {
     text-align: center;
     margin-top: 30px;
+    background-color: bisque;
+    padding: 50px;
 }
 span#p2Score {
     color: #FF9800;
