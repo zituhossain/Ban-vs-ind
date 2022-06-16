@@ -31,6 +31,8 @@ function validationInput(score) {
     }
 }
 function handleWinningState() {
+
+    // 
     if(p1Score >= winningScore || p2Score >= winningScore) {
         gameOver = true;
         p1RunElm.textContent = ' ';
@@ -38,8 +40,10 @@ function handleWinningState() {
         // disabled player 1 or player 2 btn
         p1BtnElm.setAttribute('disabled', 'disabled');
         p2BtnElm.setAttribute('disabled', 'disabled');
-        alert(+ winningScore+ ' is the winner');
+        // alert(+ winningScore+ ' is the winner');
+        p1Score >= winningScore ? alert('Bangladesh is the winner') : alert('India is the winner'); 
     }
+    
 }
 function resetValues() {
     p1Score = 0;
@@ -49,8 +53,10 @@ function resetValues() {
     turnPlayer = players[Math.floor(Math.random() * players.length)];
     p1BtnElm.removeAttribute('disabled');
     p2BtnElm.removeAttribute('disabled');
-    p1scoreElm.textContent = p1Score;
-    p2scoreElm.textContent = p2Score;
+    p1scoreElm.textContent = 'Bangladesh - ' +p1Score;
+    p2scoreElm.textContent = 'India - ' +p2Score;
+    p1RunElm.textContent = ' ';
+    p2RunElm.textContent = ' ';
     playingToElm.textContent = winningScore;
 }
 
@@ -58,7 +64,7 @@ function resetValues() {
 formElm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     // reset previous state
-    resetValues(); //reset
+    resetValues();
     // getting the input
     const inputScore = inputScoreElm.value;
     // validation check
@@ -77,16 +83,18 @@ p1BtnElm.addEventListener('click', (evt) => {
     // increase the content
     if (turnPlayer === 'p1' && !gameOver && p1Score < winningScore) {
         const getRandomNumber1 =  Math.floor(Math.random() * (6 - 0 + 1)) + 0;
-        if(getRandomNumber1==6) {
-            p1RunElm.textContent ="Wow! It's a big 6";
-        }else if(getRandomNumber1==4) {
-            p1RunElm.textContent = "Wow! It's 4";
-        }else {
-            p1RunElm.textContent = "Your Run is: " + getRandomNumber1;
-        }
         p1Score += getRandomNumber1;
+        // p1scoreElm.textContent = p1Score;
+        if(getRandomNumber1==6) {
+            p1RunElm.textContent ="(Wow! It's a big 6)";
+        }else if(getRandomNumber1==4) {
+            p1RunElm.textContent = "(Wow! It's 4)";
+        }else {
+            p1RunElm.textContent = "(Run is: " + getRandomNumber1 + ')';
+        }
+       
         // update DOM
-        p1scoreElm.textContent = p1Score;
+        p1scoreElm.textContent = 'Bangladesh - ' + p1Score;
         turnPlayer = 'p2';
         // disable p1
         p1BtnElm.setAttribute('disabled', 'disabled');
@@ -112,15 +120,15 @@ p2BtnElm.addEventListener('click', (evt) => {
     if (turnPlayer === 'p2' && !gameOver && p2Score < winningScore) {
         const getRandomNumber2 =  Math.floor(Math.random() * (6 - 0 + 1)) + 0;
         if(getRandomNumber2==6) {
-            p2RunElm.textContent ="Wow! It's a big 6";
+            p2RunElm.textContent ="(Wow! It's a big 6)";
         }else if(getRandomNumber2==4) {
-            p2RunElm.textContent = "Wow! It's 4";
+            p2RunElm.textContent = "(Wow! It's 4)";
         }else {
-            p2RunElm.textContent = "Your Run is: " + getRandomNumber2;
+            p2RunElm.textContent = "(Run is: " + getRandomNumber2 + ')'
         }
         p2Score += getRandomNumber2;
         // update DOM
-        p2scoreElm.textContent = p2Score;
+        p2scoreElm.textContent = 'India - ' + p2Score;
         turnPlayer = 'p1';
         // disable p2
         p2BtnElm.setAttribute('disabled', 'disabled');

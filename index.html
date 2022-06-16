@@ -4,30 +4,32 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
-		<title>Player1 vs Player2 Game</title>
+		<link rel="stylesheet" href="style.css">
+		<title>Bangladesh vs India Cricket Match</title>
 	</head>
 
 	<body>
 
 		<div class="container">
-			<h1>T-20 cricket match</h1>
+			<h1>T-20 Cricket Match (<img src="img/bd.png" id="bdImg">  VS <img src="img/ind.png" id="indImg">  )</h1>
 			<p>
-				<span id="p1Score">Team1 - 0</span>
-				<br>
-				<p id="p1Run"></p>
-				<span id="p2Score">Team2 - 0</span>
-				<p id="p2Run"></p>
+				<span id="p1Score"> Bangladesh - 0</span> <span id="p1Run"></span><br>
+				<span id="p2Score"> India - 0</span> <span id="p2Run"></span>
 			</p>
 
-			<p>Target: <span class="playingTo">0</span></p>
+			<p style="font-size: 20px;font-weight: bold;">Target: <span class="playingTo">0</span></p>
 			
 			<form>
-				<input type="number" id="inputScore">
+				<input type="number" id="inputScore" class="form-control form-control-sm">
 			</form>
 			<br />
-			<button class="btn btn-warning" id="p1Btn">Team-1</button>
-			<button class="btn btn-warning" id="p2Btn">Team-2</button>
-			<button id="resetBtn" class="btn btn-danger">Reset</button>
+			
+			<div class="button">
+				<button class="btn btn-success" id="p1Btn">Bangladesh</button>
+				<button class="btn btn-warning" id="p2Btn">India</button><br>
+				<button id="resetBtn" class="btn btn-danger"> Play Again</button>
+			</div>
+			
 
 		</div>
 		<script src="script.js"></script>
