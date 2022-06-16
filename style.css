@@ -1,0 +1,23 @@
+#resetBtn {
+    margin-top: 5px;
+    align-content: center;
+    text-align: center;
+}
+input#inputScore {
+    width: 50%;
+    margin: 0 auto;
+}
+.container {
+    text-align: center;
+    margin-top: 30px;
+}
+span#p2Score {
+    color: #FF9800;
+    font-size: 30px;
+    font-weight: 700;
+}
+span#p1Score {
+    color: #00695C;
+    font-size: 30px;
+    font-weight: 700;
+}
